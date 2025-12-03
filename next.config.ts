@@ -1,10 +1,8 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
+  // Removed 'output: export' to enable API routes for Vercel Postgres
+  // API routes require server-side rendering
 }
 
 export default nextConfig
