@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres'
+import { neon } from '@neondatabase/serverless';
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -23,6 +23,8 @@ export async function POST(request: Request) {
     }
 
     // Insert email into database
+    'use server';
+    const sql = neon(`${process.env.DATABASE_URL}`);
     await sql`
       INSERT INTO waitlist (email)
       VALUES (${email.toLowerCase()})
@@ -37,27 +39,6 @@ export async function POST(request: Request) {
     console.error('Error adding to waitlist:', error)
     return NextResponse.json(
       { error: 'Failed to join waitlist' },
-      { status: 500 }
-    )
-  }
-}
-
-export async function GET() {
-  try {
-    const { rows } = await sql`
-      SELECT id, email, created_at
-      FROM waitlist
-      ORDER BY created_at DESC
-    `
-
-    return NextResponse.json({
-      count: rows.length,
-      signups: rows,
-    })
-  } catch (error) {
-    console.error('Error fetching waitlist:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch waitlist' },
       { status: 500 }
     )
   }
