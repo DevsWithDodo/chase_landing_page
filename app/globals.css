@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Primary */
+  --primary: #16684D;
+  --on-primary: #FFFFFF;
+  --primary-container: #368265;
+  --on-primary-container: #F5FFF7;
+  
+  /* Secondary */
+  --secondary: #3D646F;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #AAD3DF;
+  --on-secondary-container: #345C66;
+  
+  /* Tertiary */
+  --tertiary: #894D51;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #FCB0B3;
+  --on-tertiary-container: #794044;
+  
+  /* Surface */
+  --surface: #F7FAF6;
+  --on-surface: #181C1A;
+  --on-surface-variant: #3F4943;
+  --surface-dim: #D8DBD7;
+  --surface-bright: #F7FAF6;
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F1F4F0;
+  --surface-container: #ECEFEA;
+  --surface-container-high: #E6E9E5;
+  --surface-container-highest: #E0E3DF;
+  
+  /* Outline */
+  --outline: #6F7973;
+  
+  /* Error */
+  --error: #801600;
+  --on-error: #FFFFFF;
+  
+  /* Spacing */
+  --spacing-xs: 6px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-button: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Primary */
+    --primary: #8AD6B4;
+    --on-primary: #003827;
+    --primary-container: #549F80;
+    --on-primary-container: #002115;
+    
+    /* Secondary */
+    --secondary: #C6EFFC;
+    --on-secondary: #06353F;
+    --secondary-container: #AAD3DF;
+    --on-secondary-container: #345C66;
+    
+    /* Tertiary */
+    --tertiary: #FFD6D7;
+    --on-tertiary: #522125;
+    --tertiary-container: #FCB0B3;
+    --on-tertiary-container: #794044;
+    
+    /* Surface */
+    --surface: #101412;
+    --on-surface: #E0E3DF;
+    --on-surface-variant: #C0C9C2;
+    --surface-dim: #101412;
+    --surface-bright: #363A37;
+    --surface-container-lowest: #0B0F0D;
+    --surface-container-low: #181C1A;
+    --surface-container: #1C201E;
+    --surface-container-high: #272B28;
+    --surface-container-highest: #323633;
+    
+    /* Outline */
+    --outline: #89938C;
+    
+    /* Error */
+    --error: #FFB4A3;
+    --on-error: #56190C;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--surface);
+    color: var(--on-surface);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, #16684D 0%, #3D646F 100%);
+  }
+  
+  .gradient-adventure {
+    background: linear-gradient(135deg, #16684D 0%, #368265 50%, #3D646F 100%);
+  }
+  
+  .pattern-dots {
+    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1" fill="white" opacity="0.1"/></svg>');
+  }
+  
+  .text-display-large {
+    font-size: 57px;
+    line-height: 64px;
+    letter-spacing: -0.25px;
+    font-weight: 800;
+  }
+  
+  .text-display-medium {
+    font-size: 45px;
+    line-height: 52px;
+    font-weight: 800;
+  }
+  
+  .text-headline-large {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+  }
+  
+  .text-title-large {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  
+  .text-title-medium {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    font-weight: 600;
+  }
+  
+  .text-body-large {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-body-medium {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+  
+  .text-label-large {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    font-weight: 600;
+  }
+}
