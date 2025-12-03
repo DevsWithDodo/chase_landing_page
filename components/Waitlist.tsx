@@ -24,7 +24,6 @@ export default function Waitlist() {
     }
 
     try {
-      // TODO: Replace with your actual API endpoint
       const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
@@ -33,17 +32,17 @@ export default function Waitlist() {
         body: JSON.stringify({ email }),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
         setSubmitted(true)
         localStorage.setItem('chaseTheGameWaitlist', 'true')
       } else {
-        throw new Error('An error occurred during signup')
+        alert(data.error || 'An error occurred. Please try again.')
       }
     } catch (error) {
-      // For now, just show success (since backend might not be ready)
-      console.log('Email collected:', email)
-      setSubmitted(true)
-      localStorage.setItem('chaseTheGameWaitlist', 'true')
+      console.error('Error submitting email:', error)
+      alert('Failed to join waitlist. Please check your connection and try again.')
     }
   }
 
