@@ -7,11 +7,10 @@ export default function Screenshots() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const screenshots = [
-    { src: '/screenshot-1.png', caption: 'Real-time position tracking' },
-    { src: '/screenshot-2.png', caption: 'Teams and roles' },
-    { src: '/screenshot-3.png', caption: 'Customizable rules' },
-    { src: '/screenshot-4.png', caption: 'Active game tracking' },
-    { src: '/screenshot-5.png', caption: 'Player stats and history' },
+    { src: '/screenshot-1.PNG', caption: 'Real-time position tracking' },
+    { src: '/screenshot-2.PNG', caption: 'Teams and roles' },
+    { src: '/screenshot-3.PNG', caption: 'Set up the play area' },
+    { src: '/screenshot-4.PNG', caption: 'Configure custom game modes' }
   ]
 
   const nextSlide = () => {

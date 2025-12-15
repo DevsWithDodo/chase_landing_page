@@ -24,9 +24,8 @@ export default function Features() {
           What is Hide and Chase?
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16 leading-relaxed">
-          Hide and Chase is our new urban adventure game optimized for city environments, using public transportation or other means of travel.
+          Hide and Chase is the new urban adventure game optimized for city environments, using public transportation or other means of travel.
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
           {features.map((feature, index) => (
             <div

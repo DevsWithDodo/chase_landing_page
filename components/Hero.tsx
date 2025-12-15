@@ -19,10 +19,10 @@ export default function Hero() {
               alt="Chase Logo"
               width={40}
               height={40}
-              className="w-10 h-auto"
+              className="w-auto h-18"
               priority
               />
-              <span className="text-xl font-bold text-on-surface dark:text-on-surface-dark">Hide and Chase</span>
+              <span className="text-2xl font-bold text-on-surface dark:text-on-surface-dark">Hide and Chase</span>
             </div>
             <Link 
               href="#waitlist" 
@@ -37,10 +37,10 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 pt-24">
         <h1 className="text-5xl sm:text-6xl lg:text-display-large font-extrabold mb-6 tracking-tight">
-          Live urban adventure game in your pocket
+          Live urban adventure game
         </h1>
         <p className="text-xl sm:text-2xl text-body-large mb-10 opacity-95 font-normal">
-          Create unforgettable outdoor experiences with location-based team games, optimised for urban challenges. More dynamic, more exciting, and highly customizable.
+          Gather your friends, choose a game mode, and explore the city while outsmarting your opponents in a transportation-based game.
         </p>
         <Link 
           href="#waitlist"
