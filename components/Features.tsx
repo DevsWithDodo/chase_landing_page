@@ -20,7 +20,7 @@ export default function Features() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface dark:bg-surface-dark">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl text-headline-large font-extrabold text-center mb-4 text-on-surface dark:text-on-surface-dark">
+        <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface dark:text-on-surface-dark">
           What is Hide and Chase?
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16 leading-relaxed">

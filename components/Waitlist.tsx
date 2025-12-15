@@ -51,10 +51,10 @@ export default function Waitlist() {
     return (
       <section id="waitlist" className="py-24 px-4 sm:px-6 lg:px-8 gradient-adventure text-white">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl text-display-medium font-extrabold mb-4">
+          <h2 className="text-4xl sm:text-5xl text-display-medium font-semibold mb-4">
             Join the Closed Beta!
           </h2>
-          <p className="text-xl text-body-large mb-12 opacity-95 leading-relaxed">
+          <p className="text-xl text-body-large mb-12 opacity-95" style={{ lineHeight: '1.25' }}>
             Be among the first to experience Chase the Game! 
             Enter your email and we'll notify you when the beta version is available.
           </p>
@@ -66,10 +66,10 @@ export default function Waitlist() {
   return (
     <section id="waitlist" className="py-24 px-4 sm:px-6 lg:px-8 gradient-adventure text-white">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl text-display-medium font-extrabold mb-4">
+        <h2 className="text-4xl sm:text-5xl text-display-medium font-semibold mb-4">
           Join the Closed Beta!
         </h2>
-        <p className="text-xl text-body-large mb-12 opacity-95 leading-relaxed">
+        <p className="text-xl text-body-large mb-12 opacity-95" style={{ lineHeight: '1.25' }}>
           Be among the first to experience Chase the Game! 
           Enter your email and we'll notify you when the beta version is available.
         </p>
@@ -87,13 +87,14 @@ export default function Waitlist() {
               />
               <button
                 type="submit"
-                className="px-10 py-4 bg-white text-primary rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="px-10 py-4 bg-white text-primary rounded-button text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+                style={{ fontWeight: 600 }}
               >
                 Join Waitlist
               </button>
             </div>
             <p className="text-sm opacity-80">
-              We don't send spam. We'll only notify you when the beta launches.
+              We don't spam. Your email will only be used to notify you about the beta launch. By submitting, you agree to our privacy policy and consent to receive beta notifications.
             </p>
           </form>
         ) : (

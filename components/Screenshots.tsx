@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Screenshots() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [slidesPerView, setSlidesPerView] = useState(1)
 
   const screenshots = [
     { src: '/screenshot-1.jpg', caption: 'Real-time position tracking' },
@@ -12,6 +13,22 @@ export default function Screenshots() {
     { src: '/screenshot-3.jpg', caption: 'Set up the play area' },
     { src: '/screenshot-4.jpg', caption: 'Configure custom game modes' }
   ]
+
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth >= 1024) {
+        setSlidesPerView(3)
+      } else if (window.innerWidth >= 640) {
+        setSlidesPerView(2)
+      } else {
+        setSlidesPerView(1)
+      }
+    }
+
+    updateSlidesPerView()
+    window.addEventListener('resize', updateSlidesPerView)
+    return () => window.removeEventListener('resize', updateSlidesPerView)
+  }, [])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % screenshots.length)
@@ -28,7 +45,7 @@ export default function Screenshots() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-gray-900">
+        <h2 className="text-4xl sm:text-5xl text-center mb-12 text-gray-900">
           See it in action
         </h2>
 
@@ -48,17 +65,17 @@ export default function Screenshots() {
           {/* Screenshots Container */}
           <div className="flex-1 overflow-hidden rounded-2xl">
             <div
-              className="flex gap-8 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * (300 + 32)}px)` }}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)` }}
             >
               {screenshots.map((screenshot, index) => (
-                <div key={index} className="min-w-[300px] flex-shrink-0 text-center">
+                <div key={index} className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 text-center px-4">
                   <Image
                     src={screenshot.src}
                     alt={screenshot.caption}
                     width={300}
                     height={533}
-                    className="w-full h-auto rounded-2xl shadow-lg mb-4"
+                    className="w-full max-w-[300px] h-auto rounded-2xl shadow-lg mb-4 mx-auto"
                   />
                   <p className="text-gray-600 font-medium">{screenshot.caption}</p>
                 </div>
