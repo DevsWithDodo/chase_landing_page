@@ -8,10 +8,10 @@ export default function Screenshots() {
   const [slidesPerView, setSlidesPerView] = useState(1)
 
   const screenshots = [
-    { src: '/screenshot-1.jpg', caption: 'Real-time position tracking' },
+    { src: '/screenshot-1.jpeg', caption: 'Real-time position tracking' },
     { src: '/screenshot-2.jpg', caption: 'Teams and roles' },
     { src: '/screenshot-3.jpg', caption: 'Set up the play area' },
-    { src: '/screenshot-4.PNG', caption: 'Configure custom game modes' }
+    { src: '/screenshot-4.PNG', caption: 'Configure custom game modes' },
   ]
 
   useEffect(() => {
@@ -98,7 +98,7 @@ export default function Screenshots() {
 
         {/* Dots Navigation */}
         <div className="flex justify-center gap-2 mt-8">
-          {screenshots.map((_, index) => (
+          {screenshots.slice(slidesPerView-1, screenshots.length+1).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
