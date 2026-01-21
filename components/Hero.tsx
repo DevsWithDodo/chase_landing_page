@@ -37,10 +37,10 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 pt-24">
         <h1 className="text-5xl sm:text-6xl mb-6 tracking-tight line-height-[1.5]">
-          Live urban adventure game
+          Real-World Chase Games in Your City
         </h1>
         <p className="text-xl sm:text-2xl text-body-large mb-10 opacity-95 font-normal">
-          Gather your friends, choose a game mode, and explore the city while outsmarting your opponents in a transportation-based game.
+          Inspired by shows like JetLag. Free to play. City-optimized game modes with real-time tracking. Explore your urban playground while outsmarting your opponents.
         </p>
         <Link 
           href="#waitlist"

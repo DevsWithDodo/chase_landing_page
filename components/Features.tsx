@@ -1,19 +1,19 @@
 export default function Features() {
   const features = [
     {
-      icon: '🕵️',
-      title: 'Mister X',
-      description: 'Our take on the famous board game. Track Mister X, who reveals their location at every 10 minutes!',
+      icon: '🎯',
+      title: 'Free Forever',
+      description: 'No subscription fees, no pay-to-win mechanics. Just pure real-world strategy and exploration. A free alternative to expensive adventure games.',
     },
     {
-      icon: '🏃',
-      title: 'Chase Chain',
-      description: 'Chase a team, while being chased by another! The last team standing wins.',
+      icon: '🏙️',
+      title: 'City-Optimized Modes',
+      description: 'Designed specifically for urban environments. Use public transit, navigation shortcuts, and local knowledge to gain the advantage. More intense than traditional formats.',
     },
     {
-      icon: '⚙️',
-      title: 'Or design your own game mode!',
-      description: 'The system is flexible enough to create unique rules, territories, and gameplay mechanics tailored to your adventure.',
+      icon: '🎮',
+      title: 'Multiple Game Modes',
+      description: 'Mister X (track the fugitive), Chase Chain (multi-team pursuit), or create custom rules. Each mode offers unique strategic challenges and replayability.',
     },
   ]
 
@@ -21,10 +21,10 @@ export default function Features() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface dark:bg-surface-dark">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface dark:text-on-surface-dark">
-          What is Hide and Chase?
+          Why Hide and Chase?
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16 leading-relaxed">
-          Hide and Chase is the new urban adventure game optimized for city environments, using public transportation or other means of travel.
+          If you love the thrill of real-world adventure shows, now you can experience it in your own city—without the production crew or travel budget.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
           {features.map((feature, index) => (

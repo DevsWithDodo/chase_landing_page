@@ -8,6 +8,7 @@ export default function Screenshots() {
   const [slidesPerView, setSlidesPerView] = useState(1)
 
   const screenshots = [
+    { src: '/gameplay-map.gif', caption: 'Live gameplay: Watch teams navigate the city in real-time', isVideo: true },
     { src: '/screenshot-1.jpeg', caption: 'Real-time position tracking' },
     { src: '/screenshot-2.jpg', caption: 'Teams and roles' },
     { src: '/screenshot-3.jpg', caption: 'Set up the play area' },
@@ -45,9 +46,12 @@ export default function Screenshots() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl text-center mb-12 text-gray-900">
+        <h2 className="text-4xl sm:text-5xl text-center mb-4 text-gray-900">
           See it in action
         </h2>
+        <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          Real gameplay footage and app features
+        </p>
 
         <div className="flex items-center gap-4 mt-12">
           {/* Previous Button */}
