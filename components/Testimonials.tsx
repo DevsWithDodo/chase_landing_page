@@ -26,7 +26,22 @@ export default function Testimonials() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface-container dark:bg-surface-dark-container">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface dark:text-on-surface-dark">
-          Early Tester Reviews
+          <span className="relative inline-block">
+            Early Tester Reviews
+            <svg
+              className="absolute -bottom-3 left-0 w-full h-3 text-primary opacity-70"
+              viewBox="0 0 200 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.00025 6.99997C25.7501 2.67375 72.8444 -1.72477 197.994 4.09322"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16">
           Hear from players who've already experienced the thrill

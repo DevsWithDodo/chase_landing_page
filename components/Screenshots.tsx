@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Screenshots() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -9,10 +9,10 @@ export default function Screenshots() {
 
   const screenshots = [
     { src: '/gameplay-map.gif', caption: 'Live gameplay: Watch teams navigate the city in real-time', isVideo: true },
-    { src: '/screenshot-1.jpeg', caption: 'Real-time position tracking' },
-    { src: '/screenshot-2.jpg', caption: 'Teams and roles' },
-    { src: '/screenshot-3.jpg', caption: 'Set up the play area' },
-    { src: '/screenshot-4.PNG', caption: 'Configure custom game modes' },
+    { src: '/screenshot-1.png', caption: 'Real-time position tracking' },
+    { src: '/screenshot-2.png', caption: 'Teams and roles' },
+    { src: '/screenshot-3.png', caption: 'Set up the play area' },
+    { src: '/screenshot-4.png', caption: 'Configure custom game modes' },
   ]
 
   useEffect(() => {
@@ -44,8 +44,47 @@ export default function Screenshots() {
   }
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+        <svg
+          className="absolute top-10 right-0 text-primary/5 w-[500px] h-[500px] translate-x-1/2"
+          viewBox="0 0 500 500"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50 250 C 150 100, 350 400, 450 250"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </svg>
+        <svg
+          className="absolute bottom-10 left-10 text-primary/5 w-[300px] h-[300px] -translate-x-1/2 translate-y-1/2"
+          viewBox="0 0 300 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+           <path
+            d="M20 150 C 80 50, 220 250, 280 150"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+        </svg>
+        {/* Dotted pattern */}
+        <div className="absolute top-20 left-10 opacity-10">
+          <svg width="100" height="100" fill="none" viewBox="0 0 100 100">
+            <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" className="text-primary" fill="currentColor" />
+            </pattern>
+            <rect width="100" height="100" fill="url(#dot-pattern)" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl sm:text-5xl text-center mb-4 text-gray-900">
           See it in action
         </h2>
