@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 export default function Footer() {
   return (
@@ -36,6 +38,12 @@ export default function Footer() {
             >
               Join Beta
             </a>
+            <Link
+              href="/privacy"
+              className="text-on-surface-variant dark:text-on-surface-dark-variant hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
           </div>
         </div>
 
