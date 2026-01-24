@@ -1,9 +1,10 @@
-import { neon } from '@neondatabase/serverless';
-import { NextResponse } from 'next/server'
+import { db } from '@/db';
+import { waitlist } from '@/db/schema';
+import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json()
+    const { name, email, city, country, socials, playPartners, duration } = await request.json()
 
     // Validate email
     if (!email || typeof email !== 'string') {
@@ -22,14 +23,26 @@ export async function POST(request: Request) {
       )
     }
 
-    // Insert email into database
-    'use server';
-    const sql = neon(`${process.env.DATABASE_URL}`);
-    await sql`
-      INSERT INTO waitlist (email)
-      VALUES (${email.toLowerCase()})
-      ON CONFLICT (email) DO NOTHING
-    `
+    // Insert into database
+    await db.insert(waitlist).values({
+      name: name || null,
+      email: email.toLowerCase(),
+      city: city || null,
+      country: country || null,
+      socials: socials || [],
+      playPartners: playPartners || [],
+      duration: duration || null,
+    }).onConflictDoUpdate({
+      target: waitlist.email,
+      set: {
+        name: name || null,
+        city: city || null,
+        country: country || null,
+        socials: socials || [],
+        playPartners: playPartners || [],
+        duration: duration || null,
+      },
+    });
 
     return NextResponse.json(
       { message: 'Successfully joined waitlist!' },

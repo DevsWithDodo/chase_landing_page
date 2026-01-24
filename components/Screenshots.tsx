@@ -198,7 +198,7 @@ export default function Screenshots() {
               className={`h-2.5 rounded-full transition-all ${
                 index === currentSlide
                   ? 'w-8 bg-primary'
-                  : 'w-2.5 bg-gray-300 hover:bg-primary-dark'
+                  : 'w-2.5 bg-gray-300 hover:bg-primary'
               }`}
               aria-label={`Go to screenshot ${index + 1}`}
             />

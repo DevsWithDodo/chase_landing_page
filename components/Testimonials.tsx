@@ -29,9 +29,9 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface-container dark:bg-surface-dark-container">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface-container">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface dark:text-on-surface-dark">
+        <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface">
           <span className="relative inline-block">
             Early Tester Reviews
             <svg
@@ -49,7 +49,7 @@ export default function Testimonials() {
             </svg>
           </span>
         </h2>
-        <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16">
+        <p className="text-xl text-body-large text-center text-on-surface-variant max-w-3xl mx-auto mb-16">
           Hear from players who've already experienced the thrill
         </p>
         
@@ -57,14 +57,14 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between p-8 bg-surface dark:bg-surface-dark rounded-lg border border-outline/10 transition-all hover:shadow-lg hover:-translate-y-1"
+              className="flex flex-col justify-between p-8 bg-surface rounded-lg border border-outline/10 transition-all hover:shadow-lg hover:-translate-y-1"
             >
-              <p className="text-body-large text-on-surface dark:text-on-surface-dark mb-6 leading-relaxed italic">
+              <p className="text-body-large text-on-surface mb-6 leading-relaxed italic">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-3">
                 {testimonial.image ? (
-                  <div className="w-10 h-10 rounded-full overflow-hidden bg-surface-container-low dark:bg-surface-dark-container-low flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-surface-container-low flex items-center justify-center">
                     <Image
                       src={testimonial.image!}
                       alt={testimonial.author}
@@ -79,10 +79,10 @@ export default function Testimonials() {
                 </div>
                 )}
                 <div>
-                  <p className="font-semibold text-on-surface dark:text-on-surface-dark">
+                  <p className="font-semibold text-on-surface">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-on-surface-variant dark:text-on-surface-dark-variant">
+                  <p className="text-sm text-on-surface-variant">
                     {testimonial.location}
                   </p>
                 </div>

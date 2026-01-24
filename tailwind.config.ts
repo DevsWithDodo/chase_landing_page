@@ -6,27 +6,24 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
           DEFAULT: '#16684D',
           container: '#368265',
-          dark: '#8AD6B4',
-          'dark-container': '#549F80',
         },
         secondary: {
           DEFAULT: '#3D646F',
           container: '#AAD3DF',
-          dark: '#C6EFFC',
-          'dark-container': '#AAD3DF',
         },
         tertiary: {
           DEFAULT: '#894D51',
           container: '#FCB0B3',
-          dark: '#FFD6D7',
-          'dark-container': '#FCB0B3',
+        },
+        error: {
+          DEFAULT: '#BA1A1A',
+          container: '#FFDAD6',
         },
         surface: {
           DEFAULT: '#F7FAF6',
@@ -37,24 +34,29 @@ const config: Config = {
           container: '#ECEFEA',
           'container-high': '#E6E9E5',
           'container-highest': '#E0E3DF',
-          dark: '#101412',
-          'dark-dim': '#101412',
-          'dark-bright': '#363A37',
-          'dark-container-lowest': '#0B0F0D',
-          'dark-container-low': '#181C1A',
-          'dark-container': '#1C201E',
-          'dark-container-high': '#272B28',
-          'dark-container-highest': '#323633',
         },
         'on-surface': {
           DEFAULT: '#181C1A',
           variant: '#3F4943',
-          dark: '#E0E3DF',
-          'dark-variant': '#C0C9C2',
+        },
+        'on-primary': {
+          DEFAULT: '#FFFFFF',
+          container: '#FFFFFF',
+        },
+        'on-secondary': {
+          DEFAULT: '#FFFFFF',
+          container: '#051F23',
+        },
+        'on-tertiary': {
+          DEFAULT: '#FFFFFF',
+          container: '#311013',
+        },
+        'on-error': {
+          DEFAULT: '#FFFFFF',
+          container: '#410002',
         },
         outline: {
           DEFAULT: '#6F7973',
-          dark: '#89938C',
         },
         subway: {
           red: '#ed342a',

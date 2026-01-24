@@ -1,10 +1,10 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-surface-container-low dark:bg-surface-dark-container-low py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-surface dark:bg-surface-dark rounded-lg shadow-lg p-8 text-on-surface dark:text-on-surface-dark">
+    <div className="min-h-screen bg-surface-container-low py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto bg-surface rounded-lg shadow-lg p-8 text-on-surface">
         <h2 className="text-2xl font-bold mb-4">Privacy Policy Notice</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           This privacy policy notice is served by the developers of <strong>Hide and Chase</strong>.
           The purpose of this policy is to explain how we collect, control, process, handle, and protect
           your personal data when you use the Hide and Chase mobile application or related services.
@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <h3 className="text-xl font-bold mb-3">Policy key definitions</h3>
-        <ul className="list-disc pl-6 mb-6 space-y-1 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <ul className="list-disc pl-6 mb-6 space-y-1 text-on-surface-variant">
           <li><strong>"Hide and Chase"</strong> refers to the Hide and Chase mobile application and related services</li>
           <li><strong>"we", "us", "our"</strong> refer to the developers and administrators of Hide and Chase</li>
           <li><strong>"you", "user", "player"</strong> refer to any person using the Hide and Chase app</li>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         </ul>
 
         <h3 className="text-xl font-bold mb-3">Key principles of GDPR</h3>
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Our privacy practices are designed to comply with GDPR principles, including lawfulness,
           fairness and transparency, purpose limitation, data minimisation, accuracy, storage limitation,
           integrity and confidentiality, and accountability.
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Processing your personal data</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Under the GDPR, we process personal data using the lawful basis of <strong>consent</strong>
           and, where applicable, <strong>legitimate interest</strong> to provide the core functionality
           of the Hide and Chase app.
@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
 
         <h4 className="text-lg font-bold mb-3">What data do we collect, why, and how is it used?</h4>
 
-        <ol className="list-decimal pl-6 mb-6 space-y-4 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <ol className="list-decimal pl-6 mb-6 space-y-4 text-on-surface-variant">
           <li>
             <strong>Account information</strong><br />
             When you create an account, we collect your email address and a password (stored securely in hashed form).
@@ -96,26 +96,26 @@ export default function PrivacyPolicy() {
 
         <h4 className="text-lg font-bold mb-3">Who can see my data?</h4>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Data shared within a game session (such as team names, selfies, and location data)
           is visible only to other players in the same session, and only according to the
           visibility rules defined in the game preset.
           Account-related data and data from other sessions are not visible to other users.
         </p>
 
-        <p className="font-bold mb-6 text-on-surface dark:text-on-surface-dark">
+        <p className="font-bold mb-6 text-on-surface">
           We do not sell, rent, or transmit your personal data to any third parties.
           Hide and Chase does not contain advertisements.
         </p>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Your data is stored on our servers and may be accessed by us solely for technical
           maintenance, debugging, or legal compliance purposes.
         </p>
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Data retention</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           We retain your personal data only for as long as necessary to provide the service.
           You may delete your account, which will remove your account-related data.
           Game sessions remain stored unless deleted by the session creator.
@@ -123,23 +123,23 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Your individual rights</h2>
 
-        <p className="mb-4 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-4 text-on-surface-variant">
           Under the GDPR, you have the right to be informed, access your data, request correction
           or deletion, restrict or object to processing, and request data portability.
         </p>
 
-        <p className="mb-4 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-4 text-on-surface-variant">
           You also have the right to lodge a complaint with your local data protection authority
           if you believe your data is being handled unlawfully.
         </p>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Hide and Chase does not use automated decision-making or profiling.
         </p>
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Data security</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           We take appropriate technical and organizational measures to secure your data,
           including encrypted communication, secure storage, and access controls.
           Our practices are designed to meet GDPR security requirements.
@@ -147,7 +147,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Third parties</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           Hide and Chase does not share personal data with third parties.
           If notification services or OAuth providers are introduced in the future,
           this policy will be updated accordingly.
@@ -155,7 +155,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Contact</h2>
 
-        <p className="mb-6 text-on-surface-variant dark:text-on-surface-dark-variant">
+        <p className="mb-6 text-on-surface-variant">
           If you have questions about this privacy policy or wish to exercise your rights,
           please contact us using the contact information provided within the app or on our website.
         </p>

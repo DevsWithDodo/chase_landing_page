@@ -28,7 +28,7 @@ export default function Hero() {
               <span className="text-lg md:text-2xl font-bold leading-[1.2]">Hide and Chase</span>
             </div>
             <Link 
-              href="#waitlist" 
+              href="/beta" 
               className="px-6 py-2.5 bg-white text-primary rounded-button font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
               Join now!
@@ -46,7 +46,7 @@ export default function Hero() {
           Inspired by shows like JetLag. Free to play. City-optimized game modes with real-time tracking. Explore your urban playground while outsmarting your opponents.
         </p>
         <Link 
-          href="#waitlist"
+          href="/beta"
           className="inline-block px-10 py-4 bg-white text-primary rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
         >
           Join the Closed Beta

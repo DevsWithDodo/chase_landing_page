@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Waitlist() {
   return (
     <section id="waitlist" className="py-24 px-4 sm:px-6 lg:px-8 gradient-adventure text-white">
@@ -10,14 +12,12 @@ export default function Waitlist() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <a
-            href="https://forms.google.com/YOUR_FORM_ID"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/beta"
             className="inline-block px-10 py-4 bg-white text-primary rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
           >
             Join Closed Beta →
-          </a>
+          </Link>
           <a
             href="https://reddit.com/r/YourSubreddit"
             target="_blank"
