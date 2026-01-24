@@ -1,24 +1,30 @@
+import Image from "next/image"
+
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "As a huge JetLag fan, I've been dying to play something like this in my own city. Hide and Chase delivers exactly that experience—for free!",
-      author: "Alex M.",
-      location: "San Francisco, CA"
+      quote: "My friends and I love Jet Lag and wanted to do something similar in Budapest. This app actually let us pull it off without looking crazy trying to organize it manually. High recommendations for a fun weekend.",
+      author: "Huba Sz.",
+      location: "Budapest, HU",
+      image: "/testimonials/huba.png"
     },
     {
-      quote: "The city-optimized modes are more intense than I expected. Used the subway system in ways I never thought possible. Strategic depth is incredible.",
-      author: "Jordan K.",
-      location: "New York, NY"
+      quote: "Honestly surprised by how intense it got. We thought we'd just be strolling around Florence, but we ended up sprinting to catch the next bus. The map works really well.",
+      author: "Saci K.",
+      location: "Florence, IT",
+      image: "/testimonials/saci.png"
     },
     {
-      quote: "Finally, a real-world adventure game that doesn't require flying to another continent. The custom game modes let us tailor it to our neighborhood perfectly.",
-      author: "Sam T.",
-      location: "London, UK"
+      quote: "Used this for a friend's birthday. We played the standard fugitive mode. It took a minute to set up the rules, but once we started running it was hilarious. Way better than a standard scavenger hunt.",
+      author: "Sara V.",
+      location: "Heidelberg, DE",
+      image: "/testimonials/sari.png"
     },
     {
-      quote: "Chase Chain mode is absolute chaos in the best way. Three teams racing through the city, each hunting and being hunted. Pure adrenaline.",
-      author: "Riley P.",
-      location: "Chicago, IL"
+      quote: "The Chase Chain mode is madness. We had three teams running around. Only advice: bring a power bank because the GPS uses battery. But yeah, totally worth it.",
+      author: "Abel K.",
+      location: "Manchester, UK",
+      image: "/testimonials/abel.png"
     }
   ]
 
@@ -51,15 +57,27 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 bg-surface dark:bg-surface-dark rounded-lg border border-outline/10 transition-all hover:shadow-lg hover:-translate-y-1"
+              className="flex flex-col justify-between p-8 bg-surface dark:bg-surface-dark rounded-lg border border-outline/10 transition-all hover:shadow-lg hover:-translate-y-1"
             >
               <p className="text-body-large text-on-surface dark:text-on-surface-dark mb-6 leading-relaxed italic">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-3">
+                {testimonial.image ? (
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-surface-container-low dark:bg-surface-dark-container-low flex items-center justify-center">
+                    <Image
+                      src={testimonial.image!}
+                      alt={testimonial.author}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 object-cover"
+                    />
+                  </div>
+                ) : (
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
                   {testimonial.author[0]}
                 </div>
+                )}
                 <div>
                   <p className="font-semibold text-on-surface dark:text-on-surface-dark">
                     {testimonial.author}

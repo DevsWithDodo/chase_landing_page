@@ -56,6 +56,12 @@ const config: Config = {
           DEFAULT: '#6F7973',
           dark: '#89938C',
         },
+        subway: {
+          red: '#ed342a',
+          yellow: '#ffd502',
+          blue: '#0067af',
+          green: '#42a742',
+        }
       },
       spacing: {
         'xs': '6px',

@@ -25,13 +25,13 @@ export default function Hero() {
                 priority
                 />
               </div>
-              <span className="text-lg md:text-2xl font-bold dark:text-on-surface-dark">Hide and Chase</span>
+              <span className="text-lg md:text-2xl font-bold leading-[1.2]">Hide and Chase</span>
             </div>
             <Link 
               href="#waitlist" 
               className="px-6 py-2.5 bg-white text-primary rounded-button font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
-              Join the Closed Beta
+              Join now!
             </Link>
           </div>
         </div>

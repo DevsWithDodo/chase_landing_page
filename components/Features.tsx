@@ -19,46 +19,66 @@ export default function Features() {
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      {/* Decorative subway lines */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
         <svg
-          className="absolute top-0 left-0 text-primary/5 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2"
-          viewBox="0 0 500 500"
+          className="absolute top-0 left-0 w-[500px] h-[500px]"
+          viewBox="0 0 400 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+          {/* Red Line */}
           <path
-            d="M100 250 C 200 100, 300 400, 400 250"
+            d="M 80 0 V 120 A 40 40 0 0 1 40 160 H -400"
+            className="text-subway-red"
             stroke="currentColor"
-            strokeWidth="4"
+            strokeWidth="16"
             strokeLinecap="round"
           />
+          <circle cx="80" cy="60" r="14" className="text-surface fill-current stroke-subway-red" strokeWidth="6" />
+
+          {/* Yellow Line */}
           <path
-             d="M50 300 C 150 150, 400 450, 450 300"
-             stroke="currentColor"
-             strokeWidth="2"
-             strokeLinecap="round"
-             opacity="0.6"
+            d="M 160 0 V 80 A 40 40 0 0 1 120 120 H -400"
+            className="text-subway-yellow"
+            stroke="currentColor"
+            strokeWidth="16"
+            strokeLinecap="round"
           />
+           <circle cx="40" cy="120" r="14" className="text-surface fill-current stroke-subway-yellow" strokeWidth="6" />
         </svg>
+
         <svg
-          className="absolute bottom-0 right-0 text-primary/5 w-[600px] h-[600px] translate-x-1/3 translate-y-1/3"
-          viewBox="0 0 500 500"
+          className="absolute bottom-0 right-0 w-[500px] h-[500px]"
+          viewBox="0 0 400 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+           {/* Blue Line */}
            <path
-            d="M100 250 C 200 400, 300 100, 400 250"
+            d="M 400 120 H 160 A 40 40 0 0 0 120 160 V 400"
+            className="text-subway-blue"
             stroke="currentColor"
-            strokeWidth="4"
+            strokeWidth="16"
             strokeLinecap="round"
           />
+          <circle cx="280" cy="120" r="14" className="text-surface fill-current stroke-subway-blue" strokeWidth="6" />
+
+           {/* Green Line */}
+           <path
+            d="M 400 220 H 80 A 40 40 0 0 0 40 260 V 400"
+            className="text-subway-green"
+            stroke="currentColor"
+            strokeWidth="16"
+            strokeLinecap="round"
+          />
+          <circle cx="40" cy="340" r="14" className="text-surface fill-current stroke-subway-green" strokeWidth="6" />
         </svg>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl sm:text-5xl text-center mb-4 text-on-surface dark:text-on-surface-dark">
-          Why <span className="text-primary font-semibold">Hide and Chase?</span>
+          Why <span className="text-primary font-semibold">Hide and Chase</span>?
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16 leading-relaxed">
           If you love the thrill of real-world adventure shows, now you can experience it in your own city—without the production crew or travel budget.
