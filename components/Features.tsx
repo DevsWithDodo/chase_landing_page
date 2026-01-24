@@ -1,19 +1,24 @@
 export default function Features() {
   const features = [
     {
-      icon: '🎯',
-      title: 'Free Forever',
-      description: 'No subscription fees, no pay-to-win mechanics. Just pure real-world strategy and exploration. A free alternative to expensive adventure games.',
+      icon: '🛰️',
+      title: 'Real-Time GPS Tracking',
+      description: 'Reliable location sharing keeps everyone on the map. See team positions update live or according to your custom interval settings.',
     },
     {
-      icon: '🏙️',
-      title: 'City-Optimized Modes',
-      description: 'Designed specifically for urban environments. Use public transit, navigation shortcuts, and local knowledge to gain the advantage. More intense than traditional formats.',
+      icon: '⚙️',
+      title: 'Strategic Rulesets',
+      description: 'Customize visibility with periodicity (e.g. every 5 min), proximity reveals, or headstarts. You define exactly how the game feels.',
     },
     {
       icon: '🎮',
       title: 'Multiple Game Modes',
-      description: 'Mister X (track the fugitive), Chase Chain (multi-team pursuit), or create custom rules. Each mode offers unique strategic challenges and replayability.',
+      description: 'Use our presets to play classic Mister X or Chase Chain without any setup hustle. Or build your own mode from scratch to fit your playstyle.',
+    },
+    {
+      icon: '🎯',
+      title: 'Free Forever',
+      description: 'No subscription fees, no pay-to-win mechanics. Just pure real-world strategy and exploration. A free alternative to expensive adventure games.',
     },
   ]
 
@@ -81,9 +86,9 @@ export default function Features() {
           Why <span className="text-primary font-semibold">Hide and Chase</span>?
         </h2>
         <p className="text-xl text-body-large text-center text-on-surface-variant dark:text-on-surface-dark-variant max-w-3xl mx-auto mb-16 leading-relaxed">
-          If you love the thrill of real-world adventure shows, now you can experience it in your own city—without the production crew or travel budget.
+          If you love the thrill of real-world adventure shows, now you can experience it in your own city: without the production crew or travel budget.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-16 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
