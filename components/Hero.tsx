@@ -43,7 +43,7 @@ export default function Hero() {
           Real-World Chase Games in Your City
         </h1>
         <p className="text-xl sm:text-2xl text-body-large mb-10 opacity-95 font-normal">
-          Inspired by shows like JetLag. Free to play. City-optimized game modes with real-time tracking. Explore your urban playground while outsmarting your opponents.
+          Inspired by the JetLag show and the Scotland Yard board game. Free to play IRL game with city-optimized game modes. Explore your urban playground while outsmarting your opponents.
         </p>
         <Link 
           href="/beta"
