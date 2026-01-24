@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -10,25 +10,28 @@ export default function Hero() {
       <div className="absolute inset-0 pattern-dots opacity-30" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-surface dark:bg-surface-dark backdrop-blur-md border-b border-outline/20 z-50">
+      <nav className="fixed top-0 left-0 right-0  backdrop-blur-md border-b border-outline/20 z-50 bg-primary/60 m-2 rounded-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center gap-2 md:gap-3">
-              <Image
-              src="/logo.png"
-              alt="Chase Logo"
-              width={40}
-              height={40}
-              className="w-auto h-10 md:h-16"
-              priority
-              />
-              <span className="text-lg md:text-2xl font-bold text-on-surface dark:text-on-surface-dark">Hide and Chase</span>
+              {/* Logo in circular white box */}
+              <div className='w-10 h-10 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center'>
+                <Image
+                src="/logo.png"
+                alt="Chase Logo"
+                width={40}
+                height={40}
+                className="object-contain w-6 md:w-10 h-auto"
+                priority
+                />
+              </div>
+              <span className="text-lg md:text-2xl font-bold leading-[1.2]">Hide and Chase</span>
             </div>
             <Link 
-              href="#waitlist" 
-              className="px-6 py-2.5 bg-primary hover:bg-primary-container text-on-primary rounded-button font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
+              href="/beta" 
+              className="px-6 py-2.5 bg-white text-primary rounded-button font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
-              Join Waitlist
+              Join now!
             </Link>
           </div>
         </div>
@@ -37,13 +40,13 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 pt-24">
         <h1 className="text-5xl sm:text-6xl mb-6 tracking-tight line-height-[1.5]">
-          Live urban adventure game
+          Real-World Chase Games in Your City
         </h1>
         <p className="text-xl sm:text-2xl text-body-large mb-10 opacity-95 font-normal">
-          Gather your friends, choose a game mode, and explore the city while outsmarting your opponents in a transportation-based game.
+          Inspired by shows like JetLag. Free to play. City-optimized game modes with real-time tracking. Explore your urban playground while outsmarting your opponents.
         </p>
         <Link 
-          href="#waitlist"
+          href="/beta"
           className="inline-block px-10 py-4 bg-white text-primary rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:shadow-xl"
         >
           Join the Closed Beta

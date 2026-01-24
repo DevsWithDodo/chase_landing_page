@@ -1,7 +1,13 @@
 -- Create waitlist table
 CREATE TABLE IF NOT EXISTS waitlist (
   id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
   email VARCHAR(255) UNIQUE NOT NULL,
+  city VARCHAR(255),
+  country VARCHAR(255),
+  socials TEXT[],
+  play_partners TEXT[],
+  duration VARCHAR(50),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
