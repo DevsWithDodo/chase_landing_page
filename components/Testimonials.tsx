@@ -4,9 +4,9 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote: "My friends and I love Jet Lag and wanted to do something similar in Budapest. This app actually let us pull it off without looking crazy trying to organize it manually. High recommendations for a fun weekend.",
-      author: "Huba Sz.",
+      author: "Viktor S.",
       location: "Budapest, HU",
-      image: "/testimonials/huba.png"
+      image: "/testimonials/viktor.png"
     },
     {
       quote: "Honestly surprised by how intense it got. We thought we'd just be strolling around Florence, but we ended up sprinting to catch the next bus. The map works really well.",
@@ -21,7 +21,7 @@ export default function Testimonials() {
       image: "/testimonials/sari.png"
     },
     {
-      quote: "The Chase Chain mode is madness. We had three teams running around. Only advice: bring a power bank because the GPS uses battery. But yeah, totally worth it.",
+      quote: "The Chase Chain mode is madness. We had four teams running around. Only advice: bring a power bank because the GPS uses battery. But yeah, totally worth it.",
       author: "Abel K.",
       location: "Manchester, UK",
       image: "/testimonials/abel.png"
