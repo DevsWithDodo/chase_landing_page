@@ -8,10 +8,8 @@ export default function Screenshots() {
   const [slidesPerView, setSlidesPerView] = useState(1)
 
   const screenshots = [
-    { src: '/gameplay-map.gif', caption: 'Live gameplay: Watch teams navigate the city in real-time', isVideo: true },
-    { src: '/screenshot-1.png', caption: 'Real-time position tracking' },
-    { src: '/screenshot-2.png', caption: 'Teams and roles' },
-    { src: '/screenshot-3.png', caption: 'Set up the play area' },
+    { src: '/screenshot-1.png', caption: 'Real-time position tracking and game summary' },
+    { src: '/screenshot-2.png', caption: 'Teams and roles setup' },
     { src: '/screenshot-4.png', caption: 'Configure custom game modes' },
   ]
 
