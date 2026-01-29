@@ -18,12 +18,7 @@ export default function Home() {
       price: '0',
       priceCurrency: 'USD',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '127',
-    },
-    description: 'Real-world chase game inspired by shows like JetLag. Free urban adventure with multiple game modes, real-time tracking, and city-optimized gameplay.',
+    description: 'Free to play IRL adventure game. Track opponents, explore urban environments, and outsmart your friends. Join closed beta now.',
   }
 
   return (
