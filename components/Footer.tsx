@@ -23,7 +23,7 @@ export default function Footer() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-6">
             <a 
-              href="https://reddit.com/r/YourSubreddit" 
+              href="https://reddit.com/r/HideAndChase" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-on-surface-variant hover:text-primary transition-colors"

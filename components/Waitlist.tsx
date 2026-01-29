@@ -19,7 +19,7 @@ export default function Waitlist() {
             Join Closed Beta →
           </Link>
           <a
-            href="https://reddit.com/r/YourSubreddit"
+            href="https://reddit.com/r/HideAndChase"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-transparent border-2 border-white text-white rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:bg-white/10"
