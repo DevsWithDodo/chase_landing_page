@@ -41,9 +41,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'G-VX1KS0F9TG',
-  },
 }
 
 export default function RootLayout({
@@ -55,6 +52,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VX1KS0F9TG"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VX1KS0F9TG');
+            `,
+          }}
+        />
       </head>
       <body className={nunito.className}>{children}</body>
     </html>
