@@ -68,7 +68,7 @@ export default function BetaSignup() {
     }
   }
 
-  if (isSuccess || true) {
+  if (isSuccess) {
     return (
       <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-surface-container-low flex items-center justify-center relative overflow-hidden">
         {/* Decoration Background */}
