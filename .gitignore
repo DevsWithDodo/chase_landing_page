@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# pm2
-ecosystem.config.js
+# env
+.env.production
