@@ -1,0 +1,50 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          # We pass the DB URL for the migration step
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          # Pass the env var to the script
+          envs: DATABASE_URL
+          script: |
+            # 1. Stop script immediately if any command fails
+            set -e
+            
+            echo "🚀 Starting Deployment..."
+            cd /var/www/chase-landing
+
+            # 2. Update Code
+            git fetch origin main
+            git reset --hard origin/main
+
+            # 3. Install Dependencies
+            echo "📦 Installing Dependencies..."
+            npm ci
+
+            # 4. Run Database Migrations
+            echo "🗄️ Running Migrations..."
+            npx drizzle-kit push:pg
+
+            # 5. Build the Application
+            echo "🏗️ Building..."
+            npm run build
+
+            # 6. Restart the Systemd Service
+            echo "🔄 Restarting Service..."
+            sudo systemctl restart chase-landing
+            
+            echo "✅ Deployment Successful!"
