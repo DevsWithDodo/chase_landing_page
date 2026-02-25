@@ -12,7 +12,9 @@ type Inputs = {
   socials: string[]
   playPartners: string[]
   duration: string
+  platform: string[]
   marketingConsent: boolean
+  referralCode?: string
 }
 
 import Image from 'next/image'
@@ -21,6 +23,7 @@ export default function BetaSignup() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState('')
+  const [invitationCode, setInvitationCode] = useState('')
 
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
 
@@ -38,12 +41,15 @@ export default function BetaSignup() {
       })
 
       if (!response.ok) {
-        throw new Error('Something went wrong')
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Something went wrong')
       }
 
+      const result = await response.json()
+      setInvitationCode(result.invitationCode || '')
       setIsSuccess(true)
-    } catch (err) {
-      setError('Failed to submit. Please try again.')
+    } catch (err: any) {
+      setError(err.message || 'Failed to submit. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -65,6 +71,15 @@ export default function BetaSignup() {
       }
     } catch (err) {
       console.error('Error sharing:', err)
+    }
+  }
+
+  const handleCopyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(invitationCode)
+      alert('Code copied to clipboard!')
+    } catch (err) {
+      console.error('Error copying code:', err)
     }
   }
 
@@ -90,9 +105,46 @@ export default function BetaSignup() {
             </svg>
           </div>
           <h2 className="text-2xl font-bold mb-4 text-on-surface">You're on the list!</h2>
-          <p className="text-on-surface-variant mb-8">
-            Thanks for joining the Hide and Chase beta. We'll be in touch soon with your access code.
+          <p className="text-on-surface-variant mb-6">
+            Thanks for joining the Hide and Chase beta.
           </p>
+          
+          {/* Invitation Code Display */}
+          {invitationCode && (
+            <div className="mb-8 p-6 bg-primary/10 rounded-lg border-2 border-primary/30">
+              <h3 className="text-sm font-medium text-on-surface-variant mb-2">
+                Your Invitation Code
+              </h3>
+              <div className="flex items-center gap-3 mb-3">
+                <code className="flex-1 text-2xl font-bold text-primary bg-surface px-4 py-3 rounded-lg font-mono tracking-wider">
+                  {invitationCode}
+                </code>
+                <button
+                  onClick={handleCopyCode}
+                  className="bg-primary text-on-primary p-3 rounded-lg hover:brightness-110 transition-all"
+                  title="Copy code"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
+              <p className="text-sm text-on-surface-variant">
+                Share this code with friends to ensure that they are also getting their spot in the closed beta!
+              </p>
+            </div>
+          )}
+
+          {/* Next Steps */}
+          <div className="mb-8 text-left bg-surface-container-high/50 p-5 rounded-lg border border-outline/10">
+            <h3 className="text-lg font-semibold text-on-surface mb-3">Next Steps</h3>
+            <ol className="list-decimal list-inside space-y-2 text-sm text-on-surface-variant">
+              <li>Check your email for your welcome message</li>
+              <li>Share your invitation code with friends</li>
+              <li>Join our community to stay updated</li>
+              <li>We'll notify you when you can download the game!</li>
+            </ol>
+          </div>
           
           <div className="flex flex-col gap-3">
              <button 
@@ -209,7 +261,7 @@ export default function BetaSignup() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="bg-surface rounded-xl shadow-lg border border-outline/10 p-6 sm:p-10 space-y-8">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-surface rounded-xl shadow-lg border border-outline/10 p-6 sm:p-10 space-y-8" suppressHydrationWarning>
           
           {/* Personal Info */}
           <div className="space-y-6">
@@ -226,6 +278,7 @@ export default function BetaSignup() {
                   {...register("name", { required: true })}
                   className="w-full px-4 py-2 rounded-lg bg-surface-container-highest border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-on-surface transition-all"
                   placeholder="Agent 007"
+                  suppressHydrationWarning
                 />
                 {errors.name && <span className="text-error text-sm mt-1">This field is required</span>}
               </div>
@@ -238,6 +291,7 @@ export default function BetaSignup() {
                   {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                   className="w-full px-4 py-2 rounded-lg bg-surface-container-highest border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-on-surface transition-all"
                   placeholder="you@example.com"
+                  suppressHydrationWarning
                 />
                 {errors.email && <span className="text-error text-sm mt-1">Valid email is required</span>}
               </div>
@@ -250,6 +304,7 @@ export default function BetaSignup() {
                   {...register("city", { required: true })}
                   className="w-full px-4 py-2 rounded-lg bg-surface-container-highest border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-on-surface transition-all"
                   placeholder="New York"
+                  suppressHydrationWarning
                 />
                 {errors.city && <span className="text-error text-sm mt-1">City is required</span>}
               </div>
@@ -262,6 +317,7 @@ export default function BetaSignup() {
                   {...register("country", { required: true })}
                   className="w-full px-4 py-2 rounded-lg bg-surface-container-highest border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-on-surface transition-all"
                   placeholder="USA"
+                  suppressHydrationWarning
                 />
                 {errors.country && <span className="text-error text-sm mt-1">Country is required</span>}
               </div>
@@ -274,7 +330,7 @@ export default function BetaSignup() {
               Social Media
             </h3>
             <p className="text-sm text-on-surface-variant">
-              Which platforms do you use most?
+              Which social media platforms do you use most?
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {['Instagram', 'TikTok', 'Twitter / X', 'Facebook', 'Reddit', 'Discord'].map((platform) => (
@@ -323,7 +379,7 @@ export default function BetaSignup() {
 
             <div className="space-y-3">
               <label className="block text-sm font-medium text-on-surface-variant">
-                Preferred Game Duration
+                Preferred game duration
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {['< 1 hour', '1-2 hours', '2-4 hours', '> 4 hours'].map((time) => (
@@ -340,6 +396,26 @@ export default function BetaSignup() {
               </div>
               {errors.duration && <span className="text-error text-sm">Please select a duration</span>}
             </div>
+
+            <div className="space-y-3">
+              <label className="block text-sm font-medium text-on-surface-variant">
+                Platform where you want to play
+              </label>
+              <div className="grid grid-cols-2 gap-3">
+                {['iOS', 'Android'].map((plat) => (
+                  <label key={plat} className="flex items-center space-x-3 p-3 rounded-lg border border-outline/10 hover:bg-surface-container hover:border-primary/50 cursor-pointer transition-all">
+                    <input
+                      type="checkbox"
+                      value={plat}
+                      {...register("platform", { required: true })}
+                      className="w-4 h-4 accent-primary rounded border-gray-300 focus:ring-primary"
+                    />
+                    <span className="text-sm text-on-surface">{plat}</span>
+                  </label>
+                ))}
+              </div>
+              {errors.platform && <span className="text-error text-sm">Please select at least one platform</span>}
+            </div>
           </div>
 
           {/* Trust & Updates */}
@@ -348,6 +424,24 @@ export default function BetaSignup() {
                 <p>
                   <span className="font-semibold text-primary">Why the detailed questions?</span> As a small team with limited capacity, we prioritize applicants who demonstrate a genuine interest in active testing and providing feedback during the beta phase.
                 </p>
+             </div>
+
+             <div>
+               <label className="block text-sm font-medium text-on-surface-variant mb-2">
+                 Invitation Code (Optional)
+               </label>
+               <input
+                 {...register("referralCode")}
+                 className="w-full px-4 py-2 rounded-lg bg-surface-container-highest border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-on-surface transition-all"
+                 placeholder="Enter a friend's code"
+                 onChange={(e) => {
+                   e.target.value = e.target.value.toUpperCase()
+                 }}
+                 suppressHydrationWarning
+               />
+               <p className="text-xs text-on-surface-variant mt-1">
+                 Have a code from a friend? Enter it here to guarantee your beta access.
+               </p>
              </div>
 
              <label className="flex items-start space-x-3 p-0 cursor-pointer group">
@@ -369,6 +463,7 @@ export default function BetaSignup() {
               type="submit"
               disabled={isSubmitting}
               className="w-full bg-primary text-on-primary py-3 rounded-full font-bold text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+              suppressHydrationWarning
             >
               {isSubmitting ? 'Joining...' : 'Join Waitlist'}
             </button>
