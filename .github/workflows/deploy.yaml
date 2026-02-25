@@ -33,11 +33,11 @@ jobs:
 
             # 3. Install Dependencies
             echo "📦 Installing Dependencies..."
-            npm ci
+            npm install
 
             # 4. Run Database Migrations
             echo "🗄️ Running Migrations..."
-            npx drizzle-kit push:pg
+            npx drizzle-kit migrate
 
             # 5. Build the Application
             echo "🏗️ Building..."
