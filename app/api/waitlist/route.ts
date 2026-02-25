@@ -57,32 +57,32 @@ export async function POST(request: Request) {
     }
 
     // Insert into database
-    // await db.insert(waitlist).values({
-    //   name: name || null,
-    //   email: email.toLowerCase(),
-    //   city: city || null,
-    //   country: country || null,
-    //   socials: socials || [],
-    //   playPartners: playPartners || [],
-    //   duration: duration || null,
-    //   platform: platform || [],
-    //   marketingConsent: marketingConsent || false,
-    //   invitationCode: invitationCode,
-    //   referredBy: referralCode ? referralCode.toUpperCase().trim() : null,
-    // }).onConflictDoUpdate({
-    //   target: waitlist.email,
-    //   set: {
-    //     name: name || null,
-    //     city: city || null,
-    //     country: country || null,
-    //     socials: socials || [],
-    //     playPartners: playPartners || [],
-    //     duration: duration || null,
-    //     platform: platform || [],
-    //     marketingConsent: marketingConsent || false,
-    //     referredBy: referralCode ? referralCode.toUpperCase().trim() : null,
-    //   },
-    // });
+    await db.insert(waitlist).values({
+      name: name || null,
+      email: email.toLowerCase(),
+      city: city || null,
+      country: country || null,
+      socials: socials || [],
+      playPartners: playPartners || [],
+      duration: duration || null,
+      platform: platform || [],
+      marketingConsent: marketingConsent || false,
+      invitationCode: invitationCode,
+      referredBy: referralCode ? referralCode.toUpperCase().trim() : null,
+    }).onConflictDoUpdate({
+      target: waitlist.email,
+      set: {
+        name: name || null,
+        city: city || null,
+        country: country || null,
+        socials: socials || [],
+        playPartners: playPartners || [],
+        duration: duration || null,
+        platform: platform || [],
+        marketingConsent: marketingConsent || false,
+        referredBy: referralCode ? referralCode.toUpperCase().trim() : null,
+      },
+    });
 
     // Send welcome email (non-blocking - don't fail registration if email fails)
     try {
