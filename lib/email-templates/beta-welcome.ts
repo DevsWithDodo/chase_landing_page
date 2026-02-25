@@ -2,14 +2,16 @@ export interface BetaWelcomeEmailData {
   name: string;
   email: string;
   invitationCode: string;
+  discordUrl?: string;
 }
 
 /**
  * Generates the HTML version of the beta welcome email
  */
 export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
-  const { name, invitationCode } = data;
+  const { name, invitationCode, discordUrl } = data;
   const displayName = name || 'there';
+  const communityUrl = discordUrl || 'https://discord.gg/hideandchase';
 
   return `
 <!DOCTYPE html>
@@ -150,11 +152,11 @@ export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
     </div>
 
     <div class="community">
-      <p><strong>💬 Join Our Community for Updates</strong></p>
+      <p><strong>💬 Join Our Discord for Updates</strong></p>
       <p>Stay in the loop with the latest beta news and connect with other testers:</p>
       <p>
-        <a href="https://reddit.com/r/HideAndChase">
-          Join r/HideAndChase on Reddit →
+        <a href="${communityUrl}">
+          Join our Discord Server →
         </a>
       </p>
     </div>
@@ -179,8 +181,9 @@ export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
  * Generates the plain text version of the beta welcome email
  */
 export function getBetaWelcomeEmailText(data: BetaWelcomeEmailData): string {
-  const { name, invitationCode } = data;
+  const { name, invitationCode, discordUrl } = data;
   const displayName = name || 'there';
+  const communityUrl = discordUrl || 'https://discord.gg/hideandchase';
 
   return `
 Welcome to Hide and Chase Closed Beta!
@@ -198,10 +201,10 @@ ${invitationCode}
 In the meantime, share this code with your friends!
 When they use your code during signup, they'll get guaranteed beta access.
 
-JOIN OUR COMMUNITY FOR UPDATES
-===============================
+JOIN OUR DISCORD FOR UPDATES
+============================
 Stay in the loop with the latest beta news and connect with other testers:
-Join r/HideAndChase on Reddit: https://reddit.com/r/HideAndChase
+Join our Discord Server: ${communityUrl}
 
 Best regards,
 The Hide and Chase Team

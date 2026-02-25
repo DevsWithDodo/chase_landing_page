@@ -89,8 +89,18 @@ export async function POST(request: Request) {
       await sendEmail({
         to: email.toLowerCase(),
         subject: '🎮 Welcome to Chase Beta!',
-        html: getBetaWelcomeEmailHTML({ name: name || '', email: email.toLowerCase(), invitationCode }),
-        text: getBetaWelcomeEmailText({ name: name || '', email: email.toLowerCase(), invitationCode }),
+        html: getBetaWelcomeEmailHTML({ 
+          name: name || '', 
+          email: email.toLowerCase(), 
+          invitationCode,
+          discordUrl: process.env.NEXT_PUBLIC_DISCORD_INVITE_URL 
+        }),
+        text: getBetaWelcomeEmailText({ 
+          name: name || '', 
+          email: email.toLowerCase(), 
+          invitationCode,
+          discordUrl: process.env.NEXT_PUBLIC_DISCORD_INVITE_URL 
+        }),
       });
       console.log('Welcome email sent successfully to:', email.toLowerCase());
     } catch (emailError) {

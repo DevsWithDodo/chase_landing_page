@@ -19,12 +19,12 @@ export default function Waitlist() {
             Join Closed Beta →
           </Link>
           <a
-            href="https://reddit.com/r/HideAndChase"
+            href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || 'https://discord.gg/hideandchase'}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-transparent border-2 border-white text-white rounded-button font-bold text-lg transition-all hover:-translate-y-1 hover:bg-white/10"
           >
-            Join Community →
+            Join Discord →
           </a>
         </div>
 
@@ -32,7 +32,7 @@ export default function Waitlist() {
         <div className="mt-16 pt-12 border-t border-white/20">
           <h3 className="text-2xl font-semibold mb-4">Join Our Growing Community</h3>
           <p className="text-lg opacity-90 mb-6">
-            Connect with other players on Reddit for strategy tips, city recommendations, and the latest game updates.
+            Connect with other players on Discord for strategy tips, city recommendations, and the latest game updates.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
             <div className="flex items-center gap-2">

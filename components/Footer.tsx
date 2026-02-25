@@ -23,12 +23,12 @@ export default function Footer() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-6">
             <a 
-              href="https://reddit.com/r/HideAndChase" 
+              href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL || 'https://discord.gg/hideandchase'}
               target="_blank" 
               rel="noopener noreferrer"
               className="text-on-surface-variant hover:text-primary transition-colors"
             >
-              Reddit Community
+              Discord Community
             </a>
             <Link 
               href="/beta" 
