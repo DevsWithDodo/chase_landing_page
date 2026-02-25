@@ -19,7 +19,7 @@ export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Hide and Chase Closed Beta!</title>
+  <title>Thank you for signing up - Hide and Chase Beta</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
@@ -95,7 +95,6 @@ export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
     }
     .community {
       background-color: #E6F4EA;
-      border-left: 4px solid #16684D;
       border-radius: 8px;
       padding: 16px;
       margin: 24px 0;
@@ -131,25 +130,30 @@ export function getBetaWelcomeEmailHTML(data: BetaWelcomeEmailData): string {
   <div class="container">
     <div class="header">
       <img src="https://hideandchase.com/logo.png" alt="Hide and Chase Logo" />
-      <h1>Welcome to Hide and Chase Beta!</h1>
+      <h1>Thanks for Signing Up!</h1>
     </div>
     
     <div class="content">
       <p>Hi ${displayName},</p>
       
-      <p>You've been spotted in our system - Thank you for signing up for the Hide and Chase closed beta!</p>
+      <p>You've been spotted—thank you for signing up for the Hide and Chase closed beta!</p>
       
-      <p><strong>We'll notify you via email when the app is ready for you to download.</strong> Stay tuned!</p>
+      <p>This is an automated confirmation email. <strong>We'll notify you via email if you're selected for the beta.</strong> Stay tuned!</p>
     </div>
 
     <div class="invitation-code-box">
-      <h3>Your Personal Invitation Code</h3>
+      <h3>🎁 Your Personal Invitation Code</h3>
       <div class="code-display">
         <code>${invitationCode}</code>
       </div>
-      <p><strong>In the meantime, share this code with your friends!</strong></p>
-      <p style="font-size: 13px; opacity: 0.9;">When they use your code during signup, they'll get guaranteed beta access.</p>
+      <p><strong>Share this code with your friends!</strong></p>
+      <p style="font-size: 13px; opacity: 0.9;">If you're admitted to the beta, friends who use your code will get guaranteed access too.</p>
+            
+
     </div>
+    <p style="font-size: 14px; margin-top: 16px;">
+        <strong>💡 Tip:</strong> Hide and Chase is best played with friends! We prioritize admitting users who share their codes, so spread the word to increase your chances of selection.
+    </p>
 
     <div class="community">
       <p><strong>💬 Join Our Discord for Updates</strong></p>
@@ -186,20 +190,23 @@ export function getBetaWelcomeEmailText(data: BetaWelcomeEmailData): string {
   const communityUrl = discordUrl || 'https://discord.gg/hideandchase';
 
   return `
-Welcome to Hide and Chase Closed Beta!
+Thank you for signing up - Hide and Chase Beta
 
 Hi ${displayName},
 
-You've been spotted in our system - Thank you for signing up for the Hide and Chase closed beta!
+You've been spotted—thank you for signing up for the Hide and Chase closed beta!
 
-We'll notify you via email when the app is ready to download. Stay tuned!
+This is an automated confirmation email. We'll notify you via email if you're selected for the beta. Stay tuned!
+
 
 YOUR PERSONAL INVITATION CODE
 ==============================
 ${invitationCode}
 
-In the meantime, share this code with your friends!
-When they use your code during signup, they'll get guaranteed beta access.
+Share this code with your friends!
+If you're admitted to the beta, friends who use your code will get guaranteed access too.
+
+💡 TIP: Hide and Chase is best played with friends! We prioritize admitting users who share their codes, so spread the word to increase your chances of selection.
 
 JOIN OUR DISCORD FOR UPDATES
 ============================

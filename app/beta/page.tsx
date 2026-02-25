@@ -104,9 +104,9 @@ export default function BetaSignup() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold mb-4 text-on-surface">You're on the list!</h2>
+          <h2 className="text-2xl font-bold mb-4 text-on-surface">Registration Confirmed!</h2>
           <p className="text-on-surface-variant mb-6">
-            Thanks for joining the Hide and Chase beta.
+            Thanks for signing up! We're reviewing all applications and will email you if you're selected for the beta.
           </p>
           
           {/* Invitation Code Display */}
@@ -130,19 +130,26 @@ export default function BetaSignup() {
                 </button>
               </div>
               <p className="text-sm text-on-surface-variant">
-                Share this code with friends to ensure that they are also getting their spot in the closed beta!
+                Share this code with friends! If you're admitted, they'll get guaranteed access too.
               </p>
             </div>
           )}
+
+          {/* Tip Box */}
+          <div className="mb-6 p-4 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+            <p className="text-sm text-on-surface">
+              <strong className="text-primary">💡 Tip:</strong> Hide and Chase is best played with friends! We prioritize admitting users who share their codes, so spread the word to increase your chances.
+            </p>
+          </div>
 
           {/* Next Steps */}
           <div className="mb-8 text-left bg-surface-container-high/50 p-5 rounded-lg border border-outline/10">
             <h3 className="text-lg font-semibold text-on-surface mb-3">Next Steps</h3>
             <ol className="list-decimal list-inside space-y-2 text-sm text-on-surface-variant">
-              <li>Check your email for your welcome message</li>
+              <li>Check your email for confirmation</li>
               <li>Share your invitation code with friends</li>
-              <li>Join our community to stay updated</li>
-              <li>We'll notify you when you can download the game!</li>
+              <li>Join our Discord to stay updated</li>
+              <li>We'll email you if you're selected for the beta!</li>
             </ol>
           </div>
           
@@ -423,7 +430,7 @@ export default function BetaSignup() {
           <div className="space-y-4 pt-4 border-t border-outline/10">
              <div className="bg-surface-container-high/50 p-4 rounded-lg text-sm text-on-surface-variant border border-primary/10">
                 <p>
-                  <span className="font-semibold text-primary">Why the detailed questions?</span> As a small team with limited capacity, we prioritize applicants who demonstrate a genuine interest in active testing and providing feedback during the beta phase.
+                  <span className="font-semibold text-primary">Why the detailed questions?</span> As a small team with limited capacity, we prioritize applicants who demonstrate genuine interest in active testing.
                 </p>
              </div>
 
@@ -441,7 +448,7 @@ export default function BetaSignup() {
                  suppressHydrationWarning
                />
                <p className="text-xs text-on-surface-variant mt-1">
-                 Have a code from a friend? Enter it here to guarantee your beta access.
+                 Have a code from a friend? If they're admitted to the beta, you'll get guaranteed access too!
                </p>
              </div>
 

@@ -88,7 +88,7 @@ export async function POST(request: Request) {
     try {
       await sendEmail({
         to: email.toLowerCase(),
-        subject: '🎮 Welcome to Chase Beta!',
+        subject: 'Registration Confirmed - Hide and Chase Beta',
         html: getBetaWelcomeEmailHTML({ 
           name: name || '', 
           email: email.toLowerCase(), 
